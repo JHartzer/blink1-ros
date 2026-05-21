@@ -1,0 +1,26 @@
+{
+  "name": "ROS 2 blink(1) Dev Container",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "runArgs": [
+    "--privileged",
+    "-v",
+    "/dev:/dev"
+  ],
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      },
+      "extensions": [
+        "ms-vscode.cpptools",
+        "ms-vscode.cmake-tools",
+        "ms-iot.vscode-ros"
+      ]
+    }
+  },
+  "workspaceMount": "source=${localWorkspaceFolder},target=/blink1-ws/src/blink1-ros,type=bind",
+  "workspaceFolder": "/blink1-ws/src/blink1-ros",
+  "postCreateCommand": "git config --global --add safe.directory /blink1-ws/src/blink1-ros && git submodule update --init --recursive && cd /blink1-ws && colcon build --symlink-install"
+}

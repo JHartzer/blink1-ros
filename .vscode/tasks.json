@@ -1,0 +1,19 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "colcon build",
+			"type": "shell",
+			"command": "cd /blink1-ws && colcon build --symlink-install --packages-select blink1_ros",
+			"problemMatcher": [],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"presentation": {
+				"reveal": "always",
+				"panel": "shared"
+			}
+		}
+	]
+}
