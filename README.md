@@ -1,10 +1,10 @@
 # blink1-ros
 
-A ROS 2 interface for the **blink(1) USB RGB LED** device. This package allows you to control one or more connected blink(1) devices using ROS 2 topics and custom message definitions.
+An unofficial ROS 2 interface for the [blink(1) USB LED](https://blink1.thingm.com/). This package allows you to control one or more connected blink(1) devices using a ROS 2 topic and custom message.
 
 ## Description
 
-`blink1_ros` is a ROS 2 package that wraps the low-level `blink1-lib` C library (provided via the `blink1-tool` submodule) to interface with **blink(1)** USB RGB LEDs.
+`blink1_ros` is a ROS 2 package that wraps the low-level `blink1-lib` C library (provided via the [blink1-tool](https://github.com/todbot/blink1-tool) submodule) to interface with **blink(1)** USB LEDs.
 
 ### Key Features
 * **Topic-Based Interface:** Publish simple ROS 2 messages to instantly control LED colors.
@@ -43,7 +43,7 @@ rosdep install --from-paths src --ignore-src -y
 ```
 
 ### 4. Setup USB Permissions (`udev` rules)
-By default, standard Linux users do not have permissions to access raw USB HID devices like the blink(1) without `sudo`. To enable non-root access:
+By default, standard Linux users do not have permissions to access raw USB HID devices like the `blink(1)` without `sudo`. To enable non-root access:
 
 1. Copy the provided udev rules file:
    ```bash
